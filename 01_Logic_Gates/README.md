@@ -7,7 +7,7 @@ Build a set of logic gates in .hdl files and pass the tests in the hardware simu
 
 ## Thoughts
 0. Nand
-  * built-in gate.
+    * built-in gate.
 
 1. [Not](files/Not.hdl)
     * Only one input, so feed the same value to the input pins of Nand gate.
