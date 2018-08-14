@@ -19,28 +19,21 @@ Project link on nand2tetris official website: https://www.nand2tetris.org/projec
 3. [RAM8](files/a/RAM8.hdl)
     * Need to have 8 registers updated correctly before outputting the selected register value -> DMux8Way to pass *load* to the selected register (others get 0, so won't change value)
 
-4. [RAM64](files/a/RAM64.hdl)
+4-7. [RAM64](files/a/RAM64.hdl), [RAM512](files/b/RAM512.hdl), [RAM4K](files/b/RAM4K.hdl), [RAM16K](files/b/RAM16K.hdl)
     * Same idea as RAM8.
-
-5. [RAM512](files/b/RAM512.hdl)
-    * Same idea as RAM8.
-
-6. [RAM4K](files/b/RAM4K.hdl)
-    * Same idea as RAM8.
-
-7. [RAM16K](files/b/RAM16K.hdl)
-    *  Same idea as RAM8.
 
 8. [PC](files/a/PC.hdl)
-    * 4 conditions -> 3 Mux16; priority (highest to lowest): reset, load, inc; Alternatively, 3 control bits -> Mux8Way16
+    * 4 conditions -> 3 Mux16;  priority (highest to lowest): reset, load, inc.
+    * Alternatively, 3 control bits -> Mux8Way16
     > The hardware tradeoff between using 3 Mux16 in series versus 1 Mux8Way16 is a typical space vs. speed choice. The maximum frequency for the counter will depend on how fast the feedback circuit is. The serial Mux16s will take about 3 times as long as the Mux8Way16, but the Mux8Way16 will be about 2 times the size, depending on the IC technology used. 
+    (By cadet1620, extracted from http://nand2tetris-questions-and-answers-forum.32033.n3.nabble.com/PC-Hdl-td4026543.html)
 
     * Then feed the processed value into Register. Setting load=true turns Register into a DFF16.
     * (!) Note that PC should output from the Register. 
     > Outputting from other chips does not guarantee immediate storage and input after an output is made: the input may be made at the same time of storage, which would mess up the clock cycle. The output and storage of output must occur at the same time.
     (By Aditya Gomatam, extracted from https://www.coursera.org/learn/build-a-computer/discussions/weeks/3/threads/Di7gv-qREeeelw5rF-0c1g)
     * Diagram drawn by Bjorn Inge Westerheim (see https://www.coursera.org/learn/build-a-computer/discussions/all/threads/UVIv7X38EeaEYRLxIcdkdQ/replies/LDEa8n6DEea3IA7ABe4oxQ).
-    <img src="PC_diagram.jpeg">
+    <img src="PC_diagram.jpeg" width="500px">
     * Diagram drawn by Desmond.Song (see http://nand2tetris-questions-and-answers-forum.32033.n3.nabble.com/PC-Hdl-td4026543.html)
-    <img src="PC_diagram2.jpeg">
+    <img src="PC_diagram2.png">
 
