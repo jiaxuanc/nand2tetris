@@ -19,7 +19,7 @@ Project link on nand2tetris official website: https://www.nand2tetris.org/projec
 3. [RAM8](files/a/RAM8.hdl)
     * Need to have 8 registers updated correctly before outputting the selected register value -> DMux8Way to pass *load* to the selected register (others get 0, so won't change value)
 
-4-7. [RAM64](files/a/RAM64.hdl), [RAM512](files/b/RAM512.hdl), [RAM4K](files/b/RAM4K.hdl), [RAM16K](files/b/RAM16K.hdl)
+4. -7.  [RAM64](files/a/RAM64.hdl), [RAM512](files/b/RAM512.hdl), [RAM4K](files/b/RAM4K.hdl), [RAM16K](files/b/RAM16K.hdl)
     * Same idea as RAM8.
 
 8. [PC](files/a/PC.hdl)
@@ -34,6 +34,7 @@ Project link on nand2tetris official website: https://www.nand2tetris.org/projec
     (By Aditya Gomatam, extracted from https://www.coursera.org/learn/build-a-computer/discussions/weeks/3/threads/Di7gv-qREeeelw5rF-0c1g)
     * Diagram drawn by Bjorn Inge Westerheim (see https://www.coursera.org/learn/build-a-computer/discussions/all/threads/UVIv7X38EeaEYRLxIcdkdQ/replies/LDEa8n6DEea3IA7ABe4oxQ).
     <img src="PC_diagram.jpeg" width="500px">
+
     * Diagram drawn by Desmond.Song (see http://nand2tetris-questions-and-answers-forum.32033.n3.nabble.com/PC-Hdl-td4026543.html)
     <img src="PC_diagram2.png">
 
