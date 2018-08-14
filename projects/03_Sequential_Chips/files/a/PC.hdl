@@ -16,13 +16,13 @@ CHIP PC {
     OUT out[16];
 
     PARTS:
-    Mux16(a=regOut, b=incOut, sel=inc, out=out1);
-    Mux16(a=out1, b=in, sel=load, out=out2);
-    Mux16(a=out2, b=false, sel=reset, out=out3);
+    // Mux16(a=regOut, b=incOut, sel=inc, out=out1);
+    // Mux16(a=out1, b=in, sel=load, out=out2);
+    // Mux16(a=out2, b=false, sel=reset, out=out3);
+
+    Mux8Way16(a=regOut, b=false, c=in, d=false, e=incOut, f=false, g=in, h=false, sel[0]=reset, sel[1]=load, sel[2]=inc, out=out3);
 
     Register(in=out3, load=true, out=out, out=regOut);
     Inc16(in=regOut, out=incOut);
-
-    // ALU(x=in, y=prevout, zx=reset, nx=0, zy=load, ny=inc, f=1, no=, out=, zr=, ng=);
 
 }
